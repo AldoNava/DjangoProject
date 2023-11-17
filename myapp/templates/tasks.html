@@ -1,0 +1,26 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+    {% for task in tasks %}
+
+    <h1>{% if task.done == False %}🕑{% else %}✅ {% endif %} {{task.title}}</h1>
+
+    <h2>{{task.description}}</h2>
+    <p>Project : {{task.project.name}}</p>
+    <button>Update</button>
+    <input type="checkbox">Done<br>
+
+    {% endfor %}
+</head>
+<body>
+
+</body>
+</html>
+
+{% endblock %}
